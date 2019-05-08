@@ -2,11 +2,15 @@
 
 # Class
 class Mob(object): # Player and enemy
-	def __init__(self, type, name, lvl, exp, atk, dfd, spd, pack, coin, skill, weapon, helmet, chestplate, leggings, boots):
+	def __init__(self, type, name, lvl, exp, hp, mp, hpm, mpm, atk, dfd, spd, pack, coin, skill, weapon, helmet, chestplate, leggings, boots):
 		self.type = type
 		self.name = name
 		self.lvl = lvl
 		self.exp = exp
+		self.hp = hp
+		self.mp = mp
+		self.hpm = hpm
+		self.mpm = mpm
 		self.atk = atk
 		self.dfd = dfd
 		self.spd = spd
