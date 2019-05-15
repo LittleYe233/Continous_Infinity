@@ -4,7 +4,7 @@ import matplotlib.pyplot as pt
 
 def f(x):
 
-    return 10 + x * np.log(x)
+    return (x ** 2) * np.log(3 * x)
 
 g=np.frompyfunc(f,1,1)
 
