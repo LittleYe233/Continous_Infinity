@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import numpy as np
+
 # Class
 class Mob(object): # Player and enemy
 	def __init__(self, type, name, lvl, exp, hp, mp, hpm, mpm, atk, dfd, spd, pack, coin, skill, weapon, helmet, chestplate, leggings, boots):
@@ -48,3 +50,19 @@ class Skill(object): # How to attack
 # Constant
 MAX_LEVEL = 0
 SHOP_PERIOD = 10
+
+PLAYER = 0
+ENEMY = 1
+WEAPON = 2
+HELMET = 3
+CHESTPLATE = 4
+LEGGINGS = 5
+BOOTS = 6
+
+# Function
+exp = lambda x: int(5 * x ** np.e / np.log(x ** 2 - x + 1.25) - 22)
+hpm = lambda x: 10 * x
+mpm = lambda x: 5 * x
+atk = lambda x: 5 * x
+dfd = lambda x: 5 * x
+spd = lambda x: 5 * x
