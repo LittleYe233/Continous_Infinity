@@ -2,6 +2,8 @@
 
 from definition import *
 
+# Item(self, type, name, mobs, affectSingle)
+
 # Weapon
 
 # Helmet

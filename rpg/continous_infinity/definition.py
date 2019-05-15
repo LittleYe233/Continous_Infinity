@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+#from mob import *
+#from item import *
+#from skill import *
 
 # Class
 class Mob(object): # Player and enemy
