@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from definition import *
+import mob
 import os
 import sys
 
@@ -36,7 +37,7 @@ def quit():
 lobbyChoiceList = [play, option, rule, about, quit]
 	
 # Main Function
-#player = Mob()
+#player = mob.initPlayer
 enemyList = []
 mobList = []
 
