@@ -41,14 +41,18 @@ class Item(object): # Potion, armor, weapon, etc
 			self.affectSingle(mob)
 	
 class Skill(object): # How to attack
-	def __init__(self, name, mobs, affectSingle):
+	def __init__(self, name, senders, targets, affectSender, affectTarget):
 		self.name = name
-		self.mobs = mobs
-		self.affectSingle = affectSingle
+		self.senders = senders
+		self.targets = targets
+		self.affectSender = affectSender
+		self.affectTarget = affectTarget
 		
 	def affect(self):
-		for mob in self.mobs:
-			self.affectSingle(mob)
+		for sender in self.senders:
+			self.affectSender(sender)
+		for target in self.targets:
+			self.affectTarget(target)
 	
 # Constant
 MAX_LEVEL = 0

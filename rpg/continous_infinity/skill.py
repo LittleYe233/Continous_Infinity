@@ -2,7 +2,7 @@
 
 from definition import *
 
-# Skill(self, name, mobs, affectSingle)
+# Skill(self, name, senders, targets, affectSender, affectTarget)
 
 # Same Skill
 #init_hit = lambda mobs: Skill('撞击', mobs, )
