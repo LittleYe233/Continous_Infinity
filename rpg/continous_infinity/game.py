@@ -28,6 +28,9 @@ def play():
 		level += 1
 		enemyList = getEnemyList('Level/level{}.dat'.format(level))
 		print('===== 当前关卡： 第{}关 ====='.format(level))
+		print('怪物列表：')
+		for enemy in enemyList:
+			print()
 		
 	
 def option():
@@ -45,7 +48,7 @@ def quit():
 lobbyChoiceList = [play, option, rule, about, quit]
 	
 # Main Function
-#player = mob.initPlayer()
+#player = mob.initPlayer
 
 welcome()
 
