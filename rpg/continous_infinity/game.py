@@ -20,7 +20,15 @@ def welcome():
 	print('==========================')
 	
 def play():
-	pass
+	level = 0
+	enemyList = []
+	mobList = []
+	
+	while True:
+		level += 1
+		enemyList = getEnemyList('Level/level{}.dat'.format(level))
+		print('===== 当前关卡： 第{}关 ====='.format(level))
+		
 	
 def option():
 	pass
@@ -37,9 +45,7 @@ def quit():
 lobbyChoiceList = [play, option, rule, about, quit]
 	
 # Main Function
-#player = mob.initPlayer
-enemyList = []
-mobList = []
+#player = mob.initPlayer()
 
 welcome()
 

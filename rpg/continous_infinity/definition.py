@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+import pickle
 #from mob import *
 #from item import *
 #from skill import *
@@ -73,3 +74,9 @@ mpm = lambda x: 5 * x
 atk = lambda x: 5 * x
 dfd = lambda x: 5 * x
 spd = lambda x: 5 * x
+
+def getEnemyList(path):
+	with open(path, 'wb') as f:
+		data = pickle.load(f)
+		
+	return data
