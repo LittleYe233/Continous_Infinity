@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from definition import *
+from functools import reduce
 import mob
 import os
 import sys
@@ -29,8 +30,12 @@ def play():
 		enemyList = getEnemyList('Level/level{}.dat'.format(level))
 		print('===== 当前关卡： 第{}关 ====='.format(level))
 		print('怪物列表：')
-		for enemy in enemyList:
-			print()
+		print('ID\t名称\t等级\tHP\t武器\t头盔\t胸甲\t腿甲\t靴子')
+		for idx in range(len(enemyList)):
+			print(idx, enemyList[idx].name, enemyList[idx].lvl, enemyList[idx].hp, enemyList[idx].weapon.name, enemyList[idx].chestplate.name, enemyList[idx].leggings.name, enemyList[idx].boots.name)
+		aveLvl = reduce(lambda x, y: x.lvl + y.lvl, enemyList) // len(enemyList)
+		mobList = enemyList + [player] if aveLvl > player.lvl else [player] + enemyList
+		
 		
 	
 def option():
