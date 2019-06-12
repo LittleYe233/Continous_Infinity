@@ -29,31 +29,50 @@ def play():
 	while True:
 		level += 1
 		enemyList = getEnemyList('Level/level{}.dat'.format(level))
-		# Print Level Info
-		print('===== 当前关卡： 第{}关 ====='.format(level))
-		print('怪物列表：')
-		print('ID\t名称\t等级\tHP\t武器\t头盔\t胸甲\t腿甲\t靴子')
-		for idx in range(len(enemyList)):
-			print(idx, enemyList[idx].name, enemyList[idx].lvl, enemyList[idx].hp, enemyList[idx].weapon.name, enemyList[idx].chestplate.name, enemyList[idx].leggings.name, enemyList[idx].boots.name)
 		# Judge Mob Order
 		aveLvl = reduce(lambda x, y: x.lvl + y.lvl, enemyList) // len(enemyList)
 		mobList = enemyList + [player] if aveLvl > player.lvl else [player] + enemyList
+		# Print Level Info
+		print('===== 当前关卡： 第{}关 ====='.format(level))
+		print(printMobListInfo(mobList))
 		# Every-Round Initilization
 		mobIter = None
 		# Every Round
 		while True:
-			try:
-				currentMob = mobIter.__next__()
-			except:
-				mobIter = mobList.__iter__()
-				currentMob = mobIter.__next__()
+			# Get Illegal Mob
+			while True:
+				try:
+					currentMob = mobIter.__next__()
+				except:
+					mobIter = mobList.__iter__()
+					currentMob = mobIter.__next__()
+				# Illegal Mob Should Have Healthpoint
+				if currentMob.hp > 0:
+					break
 			print('这是{}的回合！'.format(currentMob.name))
 			if currentMob.type == ENEMY:
 				# Random Skill
 				currentSkill = random.choice(currentMob.skill)
 				print('{}使用了{}技能！'.format(currentMob.name, currentSkill.name))
+				# Print Skill Effects
+				# ...
+				# ...
+				# ...
 			else:
 				print('命令列表：')
+				print('技能(0)\t背包(1)')
+				while True:
+					cmd = input('>>> ')
+					if cmd == '0':
+						pass
+					elif cmd == '1':
+						pass
+			# Print Everyone Info
+			print(printMobListInfo(mobList))
+			for idx in mobList:
+				if idx.hp <= 0:
+					print('{}死亡！'.format(idx.name))
+			
 	
 def option():
 	pass
