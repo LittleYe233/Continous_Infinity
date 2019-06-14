@@ -24,6 +24,9 @@ def play():
 	level = 0
 	enemyList = []
 	mobList = []
+	mobIter = None
+	playerStatus = ALIVE
+	score = 0
 	
 	# Every Level
 	while True:
@@ -72,7 +75,19 @@ def play():
 			for idx in mobList:
 				if idx.hp <= 0:
 					print('{}死亡！'.format(idx.name))
-			
+			# Judge If Player Is Dead
+			if player.hp <= 0:
+				playerStatus = DEAD
+				print('玩家死亡，游戏结束！')
+				break
+		if playerStatus == DEAD:
+			break
+	if playerStatus == DEAD:
+		break
+		
+	# Calculate Scores
+	print('==========================')
+	print('你的分数：')
 	
 def option():
 	pass
