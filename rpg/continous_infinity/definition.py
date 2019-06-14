@@ -78,5 +78,10 @@ spd = lambda x: 5 * x
 def getEnemyList(path):
 	with open(path, 'wb') as f:
 		data = pickle.load(f)
-		
 	return data
+	
+def printMobListInfo(moblist):
+	print('生物列表：')
+	print('ID\t名称\t等级\tHP\t武器\t头盔\t胸甲\t腿甲\t靴子')
+	for idx in range(len(moblist)):
+		print(idx, moblist[idx].name, moblist[idx].lvl, moblist[idx].hp, moblist[idx].weapon.name, moblist[idx].chestplate.name, moblist[idx].leggings.name, moblist[idx].boots.name)
