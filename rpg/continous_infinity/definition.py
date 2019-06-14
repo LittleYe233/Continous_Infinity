@@ -67,6 +67,9 @@ CHESTPLATE = 4
 LEGGINGS = 5
 BOOTS = 6
 
+ALIVE = 7
+DEAD = 8
+
 # Function
 exp = lambda x: int(5 * x ** np.e / np.log(x ** 2 - x + 1.25) - 22)
 hpm = lambda x: 10 * x
