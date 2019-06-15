@@ -42,14 +42,14 @@ def play():
 		mobIter = None
 		# Every Round
 		while True:
-			# Get Illegal Mob
+			# Get Legal Mob
 			while True:
 				try:
 					currentMob = mobIter.__next__()
 				except:
 					mobIter = mobList.__iter__()
 					currentMob = mobIter.__next__()
-				# Illegal Mob Should Have Healthpoint
+				# Legal Mob Should Have Healthpoint
 				if currentMob.hp > 0:
 					break
 			print('这是{}的回合！'.format(currentMob.name))
