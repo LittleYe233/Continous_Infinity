@@ -88,3 +88,9 @@ def printMobListInfo(moblist):
 	print('ID\t名称\t等级\tHP\t武器\t头盔\t胸甲\t腿甲\t靴子')
 	for idx in range(len(moblist)):
 		print(idx, moblist[idx].name, moblist[idx].lvl, moblist[idx].hp, moblist[idx].weapon.name, moblist[idx].chestplate.name, moblist[idx].leggings.name, moblist[idx].boots.name)
+		
+def printPlayerSkillInfo(player):
+	pass
+	
+def printPlayerItemInfo(player):
+	pass
