@@ -33,7 +33,7 @@ def play():
 		level += 1
 		enemyList = getEnemyList('Level/level{}.dat'.format(level))
 		# Judge Mob Order
-		aveLvl = reduce(lambda x, y: x.lvl + y.lvl, enemyList) // len(enemyList)
+		aveLvl = reduce(lambda x, y: x.lvl + y.lvl, enemyList) / len(enemyList)
 		mobList = enemyList + [player] if aveLvl > player.lvl else [player] + enemyList
 		# Print Level Info
 		print('===== 当前关卡： 第{}关 ====='.format(level))
@@ -63,15 +63,20 @@ def play():
 				# ...
 			else:
 				print('命令列表：')
-				print('技能(0)\t背包(1)')
+				print('显示技能(0) 显示背包(1) 使用技能(2) 使用背包(3)')
+				print('命令用法：0 或 1 或 2 <技能ID> 或 3 <物品ID>')
 				while True:
 					cmd = input('>>> ')
 					if cmd == '0':
-						pass
+						printPlayerSkillInfo(player)
 					elif cmd == '1':
+						printPlayerItemInfo(player)
+					elif cmd == '2':
+						pass
+					elif cmd == '3':
 						pass
 			# Print Everyone Info
-			print(printMobListInfo(mobList))
+			printMobListInfo(mobList)
 			for idx in mobList:
 				if idx.hp <= 0:
 					print('{}死亡！'.format(idx.name))
@@ -87,7 +92,8 @@ def play():
 		
 	# Calculate Scores
 	print('==========================')
-	print('你的分数：')
+	print('你的分数：', score, sep = '')
+	print('==========================')
 	
 def option():
 	pass
