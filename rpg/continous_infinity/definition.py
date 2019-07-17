@@ -31,9 +31,10 @@ class Mob(object): # Player and enemy
 		
 
 class Item(object): # Potion, armor, weapon, etc
-	def __init__(self, type, name, mobs, affectSingle):
+	def __init__(self, type, name, range, mobs, affectSingle):
 		self.type = type
 		self.name = name
+		self.range = range
 		self.mobs = mobs
 		self.affectSingle = affectSingle
 		
@@ -42,8 +43,10 @@ class Item(object): # Potion, armor, weapon, etc
 			self.affectSingle(mob)
 	
 class Skill(object): # How to attack
-	def __init__(self, name, senders, targets, affectSender, affectTarget):
+	def __init__(self, name, pp, range, senders, targets, affectSender, affectTarget):
 		self.name = name
+		self.pp = pp
+		self.range = range
 		self.senders = senders
 		self.targets = targets
 		self.affectSender = affectSender
@@ -90,7 +93,15 @@ def printMobListInfo(moblist):
 		print(idx, moblist[idx].name, moblist[idx].lvl, moblist[idx].hp, moblist[idx].weapon.name, moblist[idx].chestplate.name, moblist[idx].leggings.name, moblist[idx].boots.name)
 		
 def printPlayerSkillInfo(player):
-	pass
+	print('技能列表：')
+	print('ID\t名称\tPP\t范围')
+	for idx in range(len(player.skill)):
+		print(idx, player.skill[idx].name, player.skill[idx].pp, player.skill[idx].range)
 	
 def printPlayerItemInfo(player):
-	pass
+	keyList = list(player.pack.keys())
+	valueList = list(player.pack.values())
+	print('物品列表：')
+	print('ID\t名称\t数量\t范围')
+	for idx in range(len(player.pack)):
+		print(idx, keyList[idx].name, valueList[idx], keyList[idx].range)
