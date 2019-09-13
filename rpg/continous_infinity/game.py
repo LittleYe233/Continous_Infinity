@@ -25,6 +25,7 @@ def play():
 	enemyList = []
 	mobList = []
 	mobIter = None
+	player = mob.init_player
 	playerStatus = ALIVE
 	score = 0
 	
@@ -52,11 +53,12 @@ def play():
 				# Legal Mob Should Have Healthpoint
 				if currentMob.hp > 0:
 					break
-			print('这是{}的回合！'.format(currentMob.name))
+			print('这是 {} 的回合！'.format(currentMob.name))
 			if currentMob.type == ENEMY:
 				# Random Skill
 				currentSkill = random.choice(currentMob.skill)
-				print('{}使用了{}技能！'.format(currentMob.name, currentSkill.name))
+				currentSkill.affect(currentMob, player, player, [player])
+				print('{} 使用了 {} 技能！'.format(currentMob.name, currentSkill.name))
 				# Print Skill Effects
 				# ...
 				# ...
@@ -64,16 +66,16 @@ def play():
 			else:
 				print('命令列表：')
 				print('显示技能(0) 显示背包(1) 使用技能(2) 使用背包(3)')
-				print('命令用法：0 或 1 或 2 <技能ID> 或 3 <物品ID>')
+				print('命令用法：0 或 1 或 2 <技能ID> [目标ID] 或 3 <物品ID>')
 				while True:
-					cmd = input('>>> ')
-					if cmd == '0':
+					cmd = input('>>> ').split()
+					if cmd[0] == '0':
 						printPlayerSkillInfo(player)
-					elif cmd == '1':
+					elif cmd[0] == '1':
 						printPlayerItemInfo(player)
-					elif cmd == '2':
-						pass
-					elif cmd == '3':
+					elif cmd[0] == '2':
+						currentMob.skill[int(cmd[1])].affect(currentMob, enemyList[int(cmd[2])], player, enemyList)
+					elif cmd[0] == '3':
 						pass
 			# Print Everyone Info
 			printMobListInfo(mobList)
@@ -87,8 +89,6 @@ def play():
 				break
 		if playerStatus == DEAD:
 			break
-	if playerStatus == DEAD:
-		break
 		
 	# Calculate Scores
 	print('==========================')
@@ -110,13 +110,11 @@ def quit():
 lobbyChoiceList = [play, option, rule, about, quit]
 	
 # Main Function
-#player = mob.initPlayer
-
 welcome()
 
 while True:
 	cmd = input('>>> ')
 	try:
 		lobbyChoiceList[int(cmd)]()
-	except:
+	except (ValueError, IndexError):
 		pass

@@ -28,7 +28,6 @@ class Mob(object): # Player and enemy
 		self.chestplate = chestplate
 		self.leggings = leggings
 		self.boots = boots
-		
 
 class Item(object): # Potion, armor, weapon, etc
 	def __init__(self, type, name, range, mobs, affectSingle):
@@ -47,15 +46,19 @@ class Skill(object): # How to attack
 		self.name = name
 		self.pp = pp
 		self.range = range
-		self.senders = senders
-		self.targets = targets
+		self.senders = senders # It is a selector
+		self.targets = targets # It is a selector
 		self.affectSender = affectSender
 		self.affectTarget = affectTarget
 		
-	def affect(self):
-		for sender in self.senders:
+	def getMobs(self, selector, sender, target, player, enemyList): # Here 'sender' means who uses the skill (who has got this skill), not same as 'senders' in class 'Skill' definition. In fact 'senders' is often equal to a list only containing the 'sender'
+		operation = {SELF: [sender], CERTAIN_ENEMY: [target], ALL_ENEMY: enemyList if sender.type == PLAYER else [player]}
+		return operation[selector]
+		
+	def affect(self, sender, target, player, enemyList):
+		for sender in self.getMobs(self.senders, sender, target, player, enemyList):
 			self.affectSender(sender)
-		for target in self.targets:
+		for target in self.getMobs(self.targets, sender, target, player, enemyList):
 			self.affectTarget(target)
 	
 # Constant
@@ -72,6 +75,10 @@ BOOTS = 6
 
 ALIVE = 7
 DEAD = 8
+
+SELF = 9
+CERTAIN_ENEMY = 10
+ALL_ENEMY = 11
 
 # Function
 exp = lambda x: int(5 * x ** np.e / np.log(x ** 2 - x + 1.25) - 22)
