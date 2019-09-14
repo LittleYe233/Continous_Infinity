@@ -13,3 +13,5 @@ from definition import *
 # Leggings
 
 # Boots
+
+__all__ = []

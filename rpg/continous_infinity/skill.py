@@ -7,7 +7,7 @@ from definition import *
 # Same Skill
 def init_hit(senders, targets):
 	def affectSender(mob):
-		mob.mp -= 3
+		mob.pp -= 0
 		
 	def affectTarget(mob):
 		mob.hp -= 3
@@ -17,3 +17,5 @@ def init_hit(senders, targets):
 # Player Skill
 
 # Enemy Skill
+
+__all__ = ['init_hit']
