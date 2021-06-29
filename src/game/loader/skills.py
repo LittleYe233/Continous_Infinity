@@ -6,13 +6,13 @@ from definition import *
 
 # Same Skill
 def init_hit(senders, targets):
-	def affectSender(mob):
-		mob.pp -= 0
-		
-	def affectTarget(mob):
-		mob.hp -= 3
-		
-	return Skill('撞击', 0, '单个对象', senders, targets, affectSender, affectTarget)
+    def affectSender(mob):
+        mob.pp -= 0
+        
+    def affectTarget(mob):
+        mob.hp -= 3
+        
+    return Skill('撞击', 0, '单个对象', senders, targets, affectSender, affectTarget)
 
 # Player Skill
 
