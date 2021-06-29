@@ -1,6 +1,6 @@
 # Continuous Infinity - 一个从简的TRPG，基于Python开发
 
-**其他语言：**[简体中文](README.zh-cn.md) [英文](README.md)
+**其他语言：**[简体中文](README.zh-cn.md) [English](README.md)
 
 ## 开发者
 
@@ -23,3 +23,5 @@
 ## 相关链接
 
 **百度贴吧：**[http://tieba.baidu.com/p/6120244130](http://tieba.baidu.com/p/6120244130)
+
+**码云备份仓库（手动同步）：**[https://gitee.com/littleye233/ContinuousInfinity]

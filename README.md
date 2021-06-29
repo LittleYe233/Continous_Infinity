@@ -1,6 +1,6 @@
 # Continuous Infinity - A simple TRPG based on Python
 
-**Other languages:** [英文](README.md) [简体中文](README.zh-cn.md)
+**Other languages:** [English](README.md) [简体中文](README.zh-cn.md)
 
 ## Developers
 
@@ -22,4 +22,6 @@
 
 ## Related links
 
-**Baidu Tieba:** [http://tieba.baidu.com/p/6120244130](http://tieba.baidu.com/p/6120244130)
+**Baidu Tieba:** [https://tieba.baidu.com/p/6120244130](http://tieba.baidu.com/p/6120244130)
+
+**Gitee backup repo (manual syncing):** [https://gitee.com/littleye233/ContinuousInfinity]
