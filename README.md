@@ -24,4 +24,4 @@
 
 **Baidu Tieba:** [https://tieba.baidu.com/p/6120244130](http://tieba.baidu.com/p/6120244130)
 
-**Gitee backup repo (manual syncing):** [https://gitee.com/littleye233/ContinuousInfinity]
+**Gitee backup repo (manual syncing):** [https://gitee.com/littleye233/ContinuousInfinity](https://gitee.com/littleye233/ContinuousInfinity)

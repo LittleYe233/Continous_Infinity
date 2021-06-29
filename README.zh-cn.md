@@ -24,4 +24,4 @@
 
 **百度贴吧：**[http://tieba.baidu.com/p/6120244130](http://tieba.baidu.com/p/6120244130)
 
-**码云备份仓库（手动同步）：**[https://gitee.com/littleye233/ContinuousInfinity]
+**码云备份仓库（手动同步）：**[https://gitee.com/littleye233/ContinuousInfinity](https://gitee.com/littleye233/ContinuousInfinity)
