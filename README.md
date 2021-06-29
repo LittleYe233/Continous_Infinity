@@ -6,7 +6,7 @@
 
 **Lonely Walkers Workgroup**
 
-**Main members:** [LittleYe233](/LittleYe233)
+**Main members:** [LittleYe233](https://github.com/LittleYe233)
 
 ## Introduction
 

@@ -6,7 +6,7 @@
 
 **Lonely Walkers Workgroup**
 
-**主要成员：**[@LittleYe233](/LittleYe233)
+**主要成员：**[@LittleYe233](https://github.com/LittleYe233)
 
 ## 简介
 
